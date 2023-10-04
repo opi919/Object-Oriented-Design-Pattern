@@ -1,6 +1,6 @@
 package PetManagement;
 
-public class Pet {
+public abstract class Pet {
     private final String name;
     private final int age;
 
