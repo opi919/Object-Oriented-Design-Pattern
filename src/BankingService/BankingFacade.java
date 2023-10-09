@@ -1,9 +1,9 @@
 package BankingService;
 
 public class BankingFacade {
-    private BankingModule chekingModule = new CheckingModuleImp();
-    private BankingModule savingModule = new SavingModuleImp();
-    private BankingModule investModule = new InvestModuleImp();
+    private BankingModule chekingModule = new CheckingModule();
+    private BankingModule savingModule = new SavingModule();
+    private BankingModule investModule = new InvestModule();
 
     //saving module
     public void  depositToSaving(double amount){

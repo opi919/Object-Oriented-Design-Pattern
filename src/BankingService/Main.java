@@ -12,9 +12,7 @@ public class Main {
         bankingFacade.withdrawFromInvest(100);
 
         System.out.println("Checking account balance: " + bankingFacade.getChekingBalance());
-
         System.out.println("Saving account balance: " + bankingFacade.getSavingBalance());
-
         System.out.println("Investment balance: " + bankingFacade.getInvestBalance());
     }
 }

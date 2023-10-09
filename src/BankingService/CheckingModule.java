@@ -1,20 +1,21 @@
 package BankingService;
 
-public class InvestModuleImp implements  BankingModule{
-    private double balance = 0;
+public class CheckingModule implements BankingModule{
+    private double balance =0;
+
     @Override
     public void deposit(double amount) {
         balance += amount;
-        System.out.println("Invested " + amount+"tk");
+        System.out.println("Deposited " + amount + "tk to Checking account");
     }
 
     @Override
     public void withdraw(double amount) {
         if (balance >= amount) {
             balance -= amount;
-            System.out.println("Withdrawn " + amount + "tk from investment");
+            System.out.println("Withdrawn " + amount + "tk  from Checking account");
         } else {
-            System.out.println("Insufficient funds in investment");
+            System.out.println("Insufficient funds in Checking account");
         }
     }
 
