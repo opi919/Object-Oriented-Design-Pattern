@@ -39,6 +39,7 @@ public class VendingMachine {
     public void purchaseProduct(String productName) {
         Product product = products.get(productName);
 
+        // Check if product is available and has quantity
         if (product != null && product.getQuantity() > 0) {
             System.out.println("Product: " + product.getName() + ", Price: $" + product.getPrice());
             product.decreaseQuantity();
@@ -50,6 +51,7 @@ public class VendingMachine {
 
     public void displayAvailableProducts() {
         System.out.println("Available Products:");
+        // Iterate over products and print their name, quantity and price
         for (Product product : products.values()) {
             System.out.println(product.getName() + " - Quantity: " + product.getQuantity() +
                     ", Price: $" + product.getPrice());

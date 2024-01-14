@@ -1,5 +1,8 @@
 package Assignment_5;
 
-public interface OnlineRetailStore {
-    void purchase(String productName,int quantity);
+import java.util.Map;
+
+interface OnlineRetailStore {
+    Map<String,Integer> getAvailableProducts(String product);
+    String getShippingLocation();
 }
