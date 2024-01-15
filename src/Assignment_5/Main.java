@@ -7,7 +7,7 @@ public class Main {
         OnlineRetailStore onlineRetailStore = new ProxyOnlineRetailStore();
 
         // Check the availability of a specific product
-        String productToCheck = "Laptop2";
+        String productToCheck = "Laptop";
         System.out.println("Checking availability of " + productToCheck);
         displayAvailableProducts(onlineRetailStore, productToCheck);
     }
