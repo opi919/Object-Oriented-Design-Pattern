@@ -1,4 +1,4 @@
-package Assignment_7;
+package practice.state_pattern;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,37 +8,35 @@ public class VendingMachine {
     private Map<String, Product> products;
 
     public VendingMachine() {
-        this.state = new Assignment_7.IdleState();
+        this.state = new IdleState();
         this.products = new HashMap<>(0);
-
         initializeProducts();
     }
 
-    private void initializeProducts() {
-        products.put("coke", new Product("coke", 1.5, 5));
-        products.put("chips", new Product("chips", 1.5, 5));
-        products.put("pepsi", new Product("pepsi", 1.5, 5));
+    void initializeProducts() {
+        products.put("coke", new Product("coke", 10, 5));
+        products.put("chips", new Product("chips", 5, 5));
+        products.put("pepsi", new Product("pepsi", 5, 5));
     }
 
-    public void setState(VendingMachineState state) {
+    void setState(VendingMachineState state) {
         this.state = state;
     }
 
-    public void insertDollar() {
-        state.insertDollar(this);
+    void insertDollar() {
+        state.insetDollar(this);
     }
 
-    public void ejectMoney() {
+    void ejectMoney() {
         state.ejectMoney(this);
     }
 
-    public void dispenseItem() {
+    void dispenseItem() {
         state.dispenseItem(this);
     }
 
-    public void purchaseProduct(String productName) {
-        Product product = products.get(productName);
-
+    public void purchaseProduct(String name) {
+        Product product = products.get(name);
         if (product != null) {
             if (state instanceof HasOneDollarState) {
                 if (product.getQuantity() > 0) {
@@ -57,12 +55,11 @@ public class VendingMachine {
         }
     }
 
-    public void displayAvailableProducts() {
-        System.out.println("Available Products:");
-        // Iterate over products and print their name, quantity and price
+    void displayAvailableProducts() {
+        System.out.println("available products:");
         for (Product product : products.values()) {
-            System.out.println(product.getName() + " - Quantity: " + product.getQuantity() +
-                    ", Price: $" + product.getPrice());
+            System.out.println("Name: " + product.getName() + " price: " + product.getPrice() + " quantity: "
+                    + product.getQuantity());
         }
     }
 }

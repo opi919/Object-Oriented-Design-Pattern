@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Pet dog = new Pet("Doggy", 5, "dog");
         Pet cat1 = new Pet("Catty1", 5, "cat");
-        Pet cat2 = new Pet("Catty1", 5, "cat");
+        Pet cat2 = new Pet("Catty2", 5, "cat");
 
         PetShop petShop = new PetShop();
         petShop.addPet(dog);
